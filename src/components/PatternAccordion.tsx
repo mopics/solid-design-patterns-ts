@@ -11,6 +11,8 @@ export function PatternAccordion({ pattern }: Props) {
   return (
     <div className={`border rounded-lg overflow-hidden transition-colors ${open ? 'border-blue-500' : 'border-slate-700'}`}>
       <button
+        type="button"
+        aria-expanded={open}
         onClick={() => setOpen((prev) => !prev)}
         className="w-full flex items-center justify-between px-4 py-3 bg-slate-800 hover:bg-slate-700 transition-colors text-left"
       >
