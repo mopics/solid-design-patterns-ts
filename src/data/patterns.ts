@@ -2,7 +2,7 @@ export type Pattern = {
   id: string
   badge: string
   name: string
-  description: string
+  description?: string
   snippet?: string
 }
 
@@ -56,11 +56,11 @@ export const categories: Category[] = [
     title: 'Creational Patterns',
     icon: '🏗️',
     patterns: [
-      { id: 'factory-method', badge: 'FM', name: 'Factory Method', description: '' },
-      { id: 'abstract-factory', badge: 'AF', name: 'Abstract Factory', description: '' },
-      { id: 'builder', badge: 'Bu', name: 'Builder', description: '' },
-      { id: 'prototype', badge: 'Pr', name: 'Prototype', description: '' },
-      { id: 'singleton', badge: 'Si', name: 'Singleton', description: '' },
+      { id: 'factory-method', badge: 'FM', name: 'Factory Method' },
+      { id: 'abstract-factory', badge: 'AF', name: 'Abstract Factory' },
+      { id: 'builder', badge: 'Bu', name: 'Builder' },
+      { id: 'prototype', badge: 'Pr', name: 'Prototype' },
+      { id: 'singleton', badge: 'Si', name: 'Singleton' },
     ],
   },
   {
@@ -68,13 +68,13 @@ export const categories: Category[] = [
     title: 'Structural Patterns',
     icon: '🔧',
     patterns: [
-      { id: 'adapter', badge: 'Ad', name: 'Adapter', description: '' },
-      { id: 'bridge', badge: 'Br', name: 'Bridge', description: '' },
-      { id: 'composite', badge: 'Co', name: 'Composite', description: '' },
-      { id: 'decorator', badge: 'De', name: 'Decorator', description: '' },
-      { id: 'facade', badge: 'Fa', name: 'Facade', description: '' },
-      { id: 'flyweight', badge: 'Fl', name: 'Flyweight', description: '' },
-      { id: 'proxy', badge: 'Px', name: 'Proxy', description: '' },
+      { id: 'adapter', badge: 'Ad', name: 'Adapter' },
+      { id: 'bridge', badge: 'Br', name: 'Bridge' },
+      { id: 'composite', badge: 'Co', name: 'Composite' },
+      { id: 'decorator', badge: 'De', name: 'Decorator' },
+      { id: 'facade', badge: 'Fa', name: 'Facade' },
+      { id: 'flyweight', badge: 'Fl', name: 'Flyweight' },
+      { id: 'proxy', badge: 'Px', name: 'Proxy' },
     ],
   },
   {
@@ -82,16 +82,16 @@ export const categories: Category[] = [
     title: 'Behavioural Patterns',
     icon: '🎭',
     patterns: [
-      { id: 'chain-of-responsibility', badge: 'CR', name: 'Chain of Responsibility', description: '' },
-      { id: 'command', badge: 'Cm', name: 'Command', description: '' },
-      { id: 'iterator', badge: 'It', name: 'Iterator', description: '' },
-      { id: 'mediator', badge: 'Me', name: 'Mediator', description: '' },
-      { id: 'memento', badge: 'Mo', name: 'Memento', description: '' },
-      { id: 'observer', badge: 'Ob', name: 'Observer', description: '' },
-      { id: 'state', badge: 'St', name: 'State', description: '' },
-      { id: 'strategy', badge: 'Sg', name: 'Strategy', description: '' },
-      { id: 'template-method', badge: 'TM', name: 'Template Method', description: '' },
-      { id: 'visitor', badge: 'Vi', name: 'Visitor', description: '' },
+      { id: 'chain-of-responsibility', badge: 'CR', name: 'Chain of Responsibility' },
+      { id: 'command', badge: 'Cm', name: 'Command' },
+      { id: 'iterator', badge: 'It', name: 'Iterator' },
+      { id: 'mediator', badge: 'Me', name: 'Mediator' },
+      { id: 'memento', badge: 'Mo', name: 'Memento' },
+      { id: 'observer', badge: 'Ob', name: 'Observer' },
+      { id: 'state', badge: 'St', name: 'State' },
+      { id: 'strategy', badge: 'Sg', name: 'Strategy' },
+      { id: 'template-method', badge: 'TM', name: 'Template Method' },
+      { id: 'visitor', badge: 'Vi', name: 'Visitor' },
     ],
   },
 ]
