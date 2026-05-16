@@ -56,11 +56,11 @@ export const categories: Category[] = [
     title: 'Creational Patterns',
     icon: '🏗️',
     patterns: [
-      { id: 'factory-method', badge: 'FM', name: 'Factory Method' },
-      { id: 'abstract-factory', badge: 'AF', name: 'Abstract Factory' },
-      { id: 'builder', badge: 'Bu', name: 'Builder' },
-      { id: 'prototype', badge: 'Pr', name: 'Prototype' },
-      { id: 'singleton', badge: 'Si', name: 'Singleton' },
+      { id: 'singleton', badge: 'Si', name: 'Singleton', description: 'Ensures a class has only one instance and provides a global point of access to it.' },
+      { id: 'prototype', badge: 'Pr', name: 'Prototype', description: 'Creates new objects by copying an existing object, known as the prototype.' },
+      { id: 'builder', badge: 'Bu', name: 'Builder', description: 'Separates the construction of a complex object from its representation, allowing the same construction process to create different representations.' },
+      { id: 'factory-method', badge: 'FM', name: 'Factory Method', description: 'Defines an interface for creating an object, but lets subclasses decide which class to instantiate.' },
+      { id: 'abstract-factory', badge: 'AF', name: 'Abstract Factory', description: 'Provides an interface for creating families of related or dependent objects without specifying their concrete classes.' },
     ],
   },
   {
