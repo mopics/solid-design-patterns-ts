@@ -69,12 +69,12 @@ export const categories: Category[] = [
     icon: '🔧',
     patterns: [
       { id: 'adapter', badge: 'Ad', name: 'Adapter', description: 'Allows incompatible interfaces to work together by converting the interface of one class into another expected by clients.' },
-      { id: 'bridge', badge: 'Br', name: 'Bridge' },
-      { id: 'composite', badge: 'Co', name: 'Composite' },
-      { id: 'decorator', badge: 'De', name: 'Decorator' },
-      { id: 'facade', badge: 'Fa', name: 'Facade' },
-      { id: 'flyweight', badge: 'Fl', name: 'Flyweight' },
-      { id: 'proxy', badge: 'Px', name: 'Proxy' },
+      { id: 'bridge', badge: 'Br', name: 'Bridge', description: 'Decouples an abstraction from its implementation, allowing the two to vary independently.' },
+      { id: 'composite', badge: 'Co', name: 'Composite', description: 'Composes objects into tree structures to represent part-whole hierarchies, allowing clients to treat individual objects and compositions uniformly.' },
+      { id: 'decorator', badge: 'De', name: 'Decorator', description: 'Adds behavior to objects dynamically without affecting the behavior of other objects from the same class.' },
+      { id: 'facade', badge: 'Fa', name: 'Facade', description: 'Provides a simplified interface to a larger body of code, such as a class library.' },
+      { id: 'flyweight', badge: 'Fl', name: 'Flyweight', description: 'Reduces the cost of creating and manipulating a large number of similar objects.' },
+      { id: 'proxy', badge: 'Px', name: 'Proxy', description: 'Provides a surrogate or placeholder for another object to control access to it.' },
     ],
   },
   {

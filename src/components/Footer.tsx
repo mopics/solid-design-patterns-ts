@@ -1,6 +1,6 @@
 export function Footer() {
   return (
-    <footer className="text-center py-12 text-xs text-teal-100">
+    <footer className="text-center text-sm py-12 text-teal-100">
       Background image based on the Art of {' '}
       <a
         href="https://www.reddit.com/r/Astroneer/comments/1jkvaiq/space_jungle/"

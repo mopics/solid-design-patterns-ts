@@ -26,10 +26,11 @@ export function CategoryPage() {
           style={{ backgroundImage: bg.image, backgroundSize: 'cover', backgroundPosition: 'center', opacity: bg.opacity }}
         />
         <div className="relative max-w-2xl mx-auto px-6 py-12">
-          <p className="text-slate-400">Category not found.</p>
-          <Link to="/" className="text-blue-400 text-sm mt-4 inline-block hover:text-blue-300">
+          <p className="text-teal-50">Page not found.</p>
+          <Link to="/" className="text-teal-500 font-semibold text-sm mt-4 inline-block hover:text-teal-300">
             ← Back to home
           </Link>
+          <Footer />
         </div>
       </div>
     )
@@ -43,7 +44,7 @@ export function CategoryPage() {
       />
       <div className="relative max-w-2xl mx-auto px-6 py-12">
         <div className="flex items-center gap-2 mb-8 flex-wrap" style={{ fontFamily: "'Electrolize', sans-serif" }}>
-          <Link to="/" className="text-slate-500 text-sm hover:text-slate-300 transition-colors">
+          <Link to="/" className="text-teal-500 font-semibold text-sm hover:text-teal-300 transition-colors">
             ← Home
           </Link>
           <span className="text-teal-50">·</span>
