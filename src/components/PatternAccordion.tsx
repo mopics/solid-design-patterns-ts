@@ -1,6 +1,6 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import type { Pattern } from '../data/patterns'
-import { Modal } from './Modal'
 import { getPanelStyle } from '../styles'
 
 type Props = {
@@ -11,7 +11,7 @@ type Props = {
 
 export function PatternAccordion({ pattern, categoryId }: Props) {
   const [open, setOpen] = useState(false)
-  const [editing, setEditing] = useState(false)
+  const navigate = useNavigate()
   const s = getPanelStyle(categoryId)
 
   return (
@@ -56,7 +56,7 @@ export function PatternAccordion({ pattern, categoryId }: Props) {
             )}
             <button
               type="button"
-              onClick={() => setEditing(true)}
+              onClick={() => navigate(`/${categoryId}/${pattern.id}/edit`)}
               className={s.editButton.className}
               style={s.editButton.style}
             >
@@ -65,10 +65,6 @@ export function PatternAccordion({ pattern, categoryId }: Props) {
           </div>
         </div>
       )}
-
-      <Modal open={editing} onClose={() => setEditing(false)} title={pattern.name}>
-        <p className="text-sky-500 text-sm italic">Snippet editor coming soon…</p>
-      </Modal>
     </div>
   )
 }
