@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useState, useRef } from 'react'
+import Editor from '@monaco-editor/react'
 import type { Pattern } from '../data/patterns'
 import { getPanelStyle } from '../styles'
 
@@ -8,14 +8,33 @@ type Props = {
   categoryId: string
 }
 
-
 export function PatternAccordion({ pattern, categoryId }: Props) {
   const [open, setOpen] = useState(false)
-  const navigate = useNavigate()
+  const [editorHeight, setEditorHeight] = useState(340)
+  const dragStart = useRef<{ y: number; height: number } | null>(null)
   const s = getPanelStyle(categoryId)
 
+  const onDragMouseDown = (e: React.MouseEvent) => {
+    dragStart.current = { y: e.clientY, height: editorHeight }
+
+    const onMouseMove = (e: MouseEvent) => {
+      if (!dragStart.current) return
+      const delta = e.clientY - dragStart.current.y
+      setEditorHeight(Math.max(120, dragStart.current.height + delta))
+    }
+
+    const onMouseUp = () => {
+      dragStart.current = null
+      window.removeEventListener('mousemove', onMouseMove)
+      window.removeEventListener('mouseup', onMouseUp)
+    }
+
+    window.addEventListener('mousemove', onMouseMove)
+    window.addEventListener('mouseup', onMouseUp)
+  }
+
   return (
-    <div className={`rounded-lg overflow-hidden transition-colors opacity-77`}>
+    <div className="rounded-lg overflow-hidden transition-colors opacity-77">
       <button
         type="button"
         aria-expanded={open}
@@ -24,10 +43,7 @@ export function PatternAccordion({ pattern, categoryId }: Props) {
         style={s.header(open).style}
       >
         <div className="flex items-center gap-3">
-          <span
-            className={s.name(open).className}
-            style={s.name(open).style}
-          >
+          <span className={s.name(open).className} style={s.name(open).style}>
             {pattern.name}
           </span>
         </div>
@@ -39,7 +55,7 @@ export function PatternAccordion({ pattern, categoryId }: Props) {
           {s.overlays.map((style, i) => (
             <div key={i} style={style} />
           ))}
-          <div className="relative z-20">
+          <div className="relative z-20 flex flex-col gap-4">
             {pattern.description ? (
               <p className={s.text.className} style={s.text.style}>
                 {pattern.description}
@@ -50,18 +66,37 @@ export function PatternAccordion({ pattern, categoryId }: Props) {
               </p>
             )}
             {pattern.snippet && (
-              <pre className={s.snippet.className} style={s.snippet.style}>
-                {pattern.snippet}
-              </pre>
+              <div className="rounded-md overflow-hidden">
+                <div style={{ height: editorHeight }}>
+                  <Editor
+                    height="100%"
+                    defaultLanguage="typescript"
+                    theme="vs-dark"
+                    value={pattern.snippet}
+                    options={{
+                      fontSize: 12,
+                      fontFamily: "'Cascadia Code', 'Fira Code', 'JetBrains Mono', 'Consolas', monospace",
+                      fontLigatures: true,
+                      minimap: { enabled: false },
+                      scrollBeyondLastLine: false,
+                      lineNumbers: 'on',
+                      tabSize: 2,
+                      wordWrap: 'on',
+                      padding: { top: 12, bottom: 12 },
+                      smoothScrolling: true,
+                      cursorBlinking: 'smooth',
+                      renderLineHighlight: 'all',
+                      readOnly: true,
+                    }}
+                  />
+                </div>
+                <div
+                  onMouseDown={onDragMouseDown}
+                  className="h-2 cursor-ns-resize bg-slate-700/40 hover:bg-slate-500/60 transition-colors"
+                  title="Drag to resize"
+                />
+              </div>
             )}
-            <button
-              type="button"
-              onClick={() => navigate(`/${categoryId}/${pattern.id}/edit`)}
-              className={s.editButton.className}
-              style={s.editButton.style}
-            >
-              Edit snippet
-            </button>
           </div>
         </div>
       )}

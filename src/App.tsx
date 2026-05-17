@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
 import { Home } from './pages/Home'
 import { CategoryPage } from './pages/CategoryPage'
-import { EditSnippetPage } from './pages/EditSnippetPage'
+import { ExamplePage } from './pages/ExamplePage'
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/:categoryId" element={<CategoryPage />} />
-        <Route path="/:categoryId/:patternId/edit" element={<EditSnippetPage />} />
+        <Route path="/:categoryId/:patternId/example" element={<ExamplePage />} />
       </Routes>
     </div>
   )

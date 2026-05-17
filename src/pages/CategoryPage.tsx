@@ -42,7 +42,7 @@ export function CategoryPage() {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: bg.image, backgroundSize: 'cover', backgroundPosition: 'center', opacity: bg.opacity }}
       />
-      <div className="relative max-w-2xl mx-auto px-6 py-12">
+      <div className="relative max-w-2xl lg:max-w-[772px] mx-auto px-6 py-12">
         <div className="flex items-center gap-2 mb-8 flex-wrap" style={{ fontFamily: "'Electrolize', sans-serif" }}>
           <Link to="/" className="text-teal-500 font-semibold text-sm hover:text-teal-300 transition-colors">
             ← Home

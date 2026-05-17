@@ -5,7 +5,7 @@ import { categories } from '../data/patterns'
 import { getPanelStyle } from '../styles'
 import { Footer } from '../components/Footer'
 
-export function EditSnippetPage() {
+export function ExamplePage() {
   const { categoryId, patternId } = useParams<{ categoryId: string; patternId: string }>()
   const category = categories.find((c) => c.id === categoryId)
   const pattern = category?.patterns.find((p) => p.id === patternId)
@@ -59,6 +59,17 @@ export function EditSnippetPage() {
               {pattern.name}.ts
             </h1>
           </div>
+
+          {pattern.description && (
+            <div className={s.panel.className} style={{ ...s.panel.style, padding: '12px 20px' }}>
+              {s.overlays.map((style, i) => (
+                <div key={i} style={style} />
+              ))}
+              <p className={`relative z-20 text-sm leading-relaxed ${s.text.className}`} style={s.text.style}>
+                {pattern.description}
+              </p>
+            </div>
+          )}
 
           <div style={{ height: '520px' }}>
             <Editor
