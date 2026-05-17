@@ -20,10 +20,14 @@ export function PatternAccordion({ pattern, categoryId }: Props) {
         type="button"
         aria-expanded={open}
         onClick={() => setOpen((prev) => !prev)}
-        className={`group w-full flex items-center justify-between px-4 py-3 bg-amber-50 transition-colors text-left ${open ? 'bg-mist-950' : 'bg-amber-50/70'}`}
+        className={s.header(open).className}
+        style={s.header(open).style}
       >
         <div className="flex items-center gap-3">
-          <span className={`text-sm font-medium transition-colors ${open ? 'text-teal-50' : 'text-amber-950'}`}>
+          <span
+            className={s.name(open).className}
+            style={s.name(open).style}
+          >
             {pattern.name}
           </span>
         </div>

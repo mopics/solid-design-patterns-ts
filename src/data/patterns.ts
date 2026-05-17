@@ -68,7 +68,7 @@ export const categories: Category[] = [
     title: 'Structural Patterns',
     icon: '🔧',
     patterns: [
-      { id: 'adapter', badge: 'Ad', name: 'Adapter' },
+      { id: 'adapter', badge: 'Ad', name: 'Adapter', description: 'Allows incompatible interfaces to work together by converting the interface of one class into another expected by clients.' },
       { id: 'bridge', badge: 'Br', name: 'Bridge' },
       { id: 'composite', badge: 'Co', name: 'Composite' },
       { id: 'decorator', badge: 'De', name: 'Decorator' },
@@ -82,7 +82,7 @@ export const categories: Category[] = [
     title: 'Behavioural Patterns',
     icon: '🎭',
     patterns: [
-      { id: 'chain-of-responsibility', badge: 'CR', name: 'Chain of Responsibility' },
+      { id: 'chain-of-responsibility', badge: 'CR', name: 'Chain of Responsibility', description: 'Allows an object to send a command without knowing which object will receive and handle it, by passing the command along a chain of potential handlers until one of them handles it.' },
       { id: 'command', badge: 'Cm', name: 'Command' },
       { id: 'iterator', badge: 'It', name: 'Iterator' },
       { id: 'mediator', badge: 'Me', name: 'Mediator' },

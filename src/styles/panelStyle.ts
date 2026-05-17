@@ -1,10 +1,15 @@
 import type { CSSProperties } from 'react'
 
+type Slot = { className: string; style: CSSProperties }
+
 export type PanelStyle = {
-  panel: { className: string; style: CSSProperties }
+  header: (open: boolean) => Slot
+  name: (open: boolean) => Slot
+  panel: Slot
   overlays: CSSProperties[]
-  text: { className: string; style: CSSProperties }
-  placeholder: { className: string; style: CSSProperties }
-  snippet: { className: string; style: CSSProperties }
-  editButton: { className: string; style: CSSProperties }
+  text: Slot
+  placeholder: Slot
+  snippet: Slot
+  editButton: Slot
+  cardGlow: string
 }

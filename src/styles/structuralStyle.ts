@@ -1,6 +1,20 @@
 import type { PanelStyle } from './panelStyle'
 
+const elec = "'Electrolize', sans-serif"
+
 export const structuralStyle: PanelStyle = {
+  header: (open) => ({
+    className: 'group w-full flex items-center justify-between px-4 py-3 transition-colors text-left',
+    style: { background: open ? '#0a150a' : '#050a05', fontFamily: elec },
+  }),
+  name: (open) => ({
+    className: 'text-sm font-medium transition-colors',
+    style: {
+      color: open ? '#4ade80' : '#166534',
+      fontFamily: elec,
+      textShadow: open ? '0 0 6px rgba(0,255,0,0.5)' : 'none',
+    },
+  }),
   panel: {
     className: 'relative overflow-hidden px-4 py-4 border-t border-green-900 font-mono',
     style: {
@@ -39,4 +53,5 @@ export const structuralStyle: PanelStyle = {
     className: 'mt-3 text-xs text-green-800 hover:text-green-400 transition-colors',
     style: {},
   },
+  cardGlow: '0 0 18px rgba(0,220,80,0.5), 0 0 40px rgba(0,180,0,0.2)',
 }

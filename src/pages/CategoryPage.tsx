@@ -5,11 +5,11 @@ import { Footer } from '../components/Footer'
 
 const pageBg: Record<string, { base: string; opacity: string; image?: string }> = {
   solid: {
-    base: '#010718', opacity: '0.3', image: "url('/solid-BG.png')"
+    base: '#910e67', opacity: '0.52', image: "url('/home-BG.png')"
   },
-  creational: { base: '#023521', opacity: '0.5', image: "url('/solid-BG.png')" },
-  structural: { base: '#196d59', opacity: '0.60', image: "url('/space-jungle-v0-dq4y446fm5re1.png')" },
-  behavioural: { base: '#52188d', opacity: '0.77', image: "url('/space-jungle-v0-dq4y446fm5re1.png')" },
+  creational: { base: '#910e67', opacity: '0.52', image: "url('/home-BG.png')" },
+  structural: { base: '#910e67', opacity: '0.52', image: "url('/home-BG.png')" },
+  behavioural: { base: '#910e67', opacity: '0.52', image: "url('/home-BG.png')" },
 }
 
 export function CategoryPage() {
@@ -42,7 +42,7 @@ export function CategoryPage() {
         style={{ backgroundImage: bg.image, backgroundSize: 'cover', backgroundPosition: 'center', opacity: bg.opacity }}
       />
       <div className="relative max-w-2xl mx-auto px-6 py-12">
-        <div className="flex items-center gap-2 mb-8 flex-wrap">
+        <div className="flex items-center gap-2 mb-8 flex-wrap" style={{ fontFamily: "'Electrolize', sans-serif" }}>
           <Link to="/" className="text-slate-500 text-sm hover:text-slate-300 transition-colors">
             ← Home
           </Link>

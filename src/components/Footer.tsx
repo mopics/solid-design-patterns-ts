@@ -1,12 +1,12 @@
 export function Footer() {
   return (
-    <footer className="text-center py-12 text-xs text-slate-800">
+    <footer className="text-center py-12 text-xs text-teal-100">
       Background image based on the Art of {' '}
       <a
         href="https://www.reddit.com/r/Astroneer/comments/1jkvaiq/space_jungle/"
         target="_blank"
         rel="noopener noreferrer"
-        className="underline hover:text-slate-300 transition-colors"
+        className="underline text-green-400 hover:text-green-200 transition-colors hover:[text-shadow:0_0_8px_#4ade80,0_0_16px_#4ade80]"
       >
         r/Astroneer
       </a>
